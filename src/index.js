@@ -314,10 +314,6 @@ export default {
 		switch (url.pathname) {
 			case '/api/submit-request':
 				return handleSubmitRequest(request, env);
-			default:
-				const url = new URL(request.url);
-				const statusCode = 301;
-    			return Response.redirect(`${url.origin}/404`, statusCode);
 		}
 	},
 };
