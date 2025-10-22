@@ -1,0 +1,558 @@
+/* ===================================
+   Estimate Calculator Styles
+   =================================== */
+
+/* Color Palette */
+:root {
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #3b82f6;
+  --color-blue-700: #1d4ed8;
+
+  --color-red-100: #fee2e2;
+  --color-red-500: #ef4444;
+  --color-red-700: #b91c1c;
+
+  --color-purple-100: #f3e8ff;
+  --color-purple-500: #a855f7;
+  --color-purple-700: #7e22ce;
+
+  --color-green-100: #dcfce7;
+  --color-green-500: #22c55e;
+  --color-green-700: #15803d;
+
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+}
+
+/* Page Spacing */
+.estimate-section {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+/* Form Sections */
+.form-section {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .form-section {
+    padding: 2.2rem;
+  }
+}
+
+/* Selection Cards */
+.selection-card {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.selection-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.selection-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.8rem;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.75rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+  margin-bottom: 0;
+}
+
+/*.selection-label:hover {
+  background: var(--color-gray-100);
+}*/
+
+/* Card Icon */
+.card-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-slate-800);
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-gray-500);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+/* Card Price */
+.card-price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+/* Card Checkmark 
+.card-check {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--color-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+}
+
+.card-check svg {
+  width: 14px;
+  height: 14px;
+  color: white;
+}*/
+
+/* Selected State */
+.selection-checkbox:checked + .selection-label .card-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Feature Cards (Blue) */
+.feature-card .selection-label {
+  border-color: var(--color-slate-500);
+}
+
+.feature-card .card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-slate-800);
+}
+
+.feature-card .card-price {
+  color: var(--color-gray-500);
+}
+
+.feature-card .selection-checkbox:checked + .selection-label {
+  background: var(--color-gray-100);
+  border-color: var(--color-blue-700);
+}
+
+.feature-card .selection-checkbox:checked + .selection-label .card-title,
+.feature-card .selection-checkbox:checked + .selection-label .card-subtitle,
+.feature-card .selection-checkbox:checked + .selection-label .card-price {
+  color: var(--color-slate-800);
+}
+
+.feature-card .selection-checkbox:checked + .selection-label .card-check {
+  background: var(--color-blue-700);
+  border-color: var(--color-blue-700);
+}
+
+/* Security Cards (Red) */
+.security-card .selection-label {
+  border-color: var(--color-slate-500);
+}
+
+.security-card .card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-slate-800);
+}
+
+.security-card .card-price {
+  color: var(--color-gray-500);
+}
+
+.security-card .selection-checkbox:checked + .selection-label {
+  background: var(--color-gray-100);
+  border-color: var(--color-purple-500);
+}
+
+.security-card .selection-checkbox:checked + .selection-label .card-title,
+.security-card .selection-checkbox:checked + .selection-label .card-subtitle,
+.security-card .selection-checkbox:checked + .selection-label .card-price {
+  color: var(--color-slate-800);
+}
+
+.security-card .selection-checkbox:checked + .selection-label .card-check {
+  background: var(--color-red-700);
+  border-color: var(--color-red-700);
+}
+
+/* Custom/UI-UX Cards (Purple) */
+.custom-card .selection-label {
+  border-color: var(--color-slate-500);
+}
+
+.custom-card .card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-slate-800);
+}
+
+.custom-card .card-price {
+  color: var(--color-gray-500);
+}
+
+.custom-card .selection-checkbox:checked + .selection-label {
+  background: var(--color-gray-100);
+  border-color: var(--color-purple-500);
+}
+
+.custom-card .selection-checkbox:checked + .selection-label .card-title,
+.custom-card .selection-checkbox:checked + .selection-label .card-subtitle,
+.custom-card .selection-checkbox:checked + .selection-label .card-price {
+  color: var(--color-slate-800);
+}
+
+.custom-card .selection-checkbox:checked + .selection-label .card-check {
+  background: var(--color-purple-700);
+  border-color: var(--color-purple-700);
+}
+
+/* Deployment Cards (Green) */
+.deployment-card .selection-label {
+  border-color: var(--color-slate-500);
+}
+
+.deployment-card .card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-slate-800);
+}
+
+.deployment-card .card-price {
+  color: var(--color-gray-500);
+}
+
+.deployment-card .selection-checkbox:checked + .selection-label {
+  background: var(--color-gray-100);
+  border-color: var(--color-green-700);
+}
+
+.deployment-card .selection-checkbox:checked + .selection-label .card-title,
+.deployment-card .selection-checkbox:checked + .selection-label .card-subtitle,
+.deployment-card .selection-checkbox:checked + .selection-label .card-price {
+  color: var(--color-slate-800);
+}
+
+.deployment-card .selection-checkbox:checked + .selection-label .card-check {
+  background: var(--color-green-700);
+  border-color: var(--color-green-700);
+}
+
+/* Custom Request Card (Blue) */
+.custom-request-card .selection-label {
+  border-color: var(--color-slate-500);
+}
+
+.custom-request-card .card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-slate-800);
+}
+
+.custom-request-card .card-price {
+  color: var(--color-gray-500);
+}
+
+.custom-request-card .selection-checkbox:checked + .selection-label {
+  background: var(--color-gray-100);
+  border-color: var(--color-blue-700);
+}
+
+.custom-request-card .selection-checkbox:checked + .selection-label .card-title,
+.custom-request-card .selection-checkbox:checked + .selection-label .card-subtitle,
+.custom-request-card .selection-checkbox:checked + .selection-label .card-price {
+  color: var(--color-slate-800);
+}
+
+.custom-request-card .selection-checkbox:checked + .selection-label .card-check {
+  background: var(--color-blue-700);
+  border-color: var(--color-blue-700);
+}
+
+/* Custom Request Container Animation */
+#customRequestContainer {
+  animation: slideDown 0.3s ease-out;
+  transform-origin: top;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estimate Summary */
+#estimateSummary {
+  animation: fadeIn 0.3s ease-out;
+}
+
+#estimateSummary #totalEstimate {
+  font-size: 1rem;
+  color: var(--color-blue-700);
+}
+
+/* Estimate Sidebar Wrapper - Sticky on Desktop */
+.estimate-sidebar-wrapper {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+@media (max-width: 991px) {
+  .estimate-sidebar-wrapper {
+    position: relative;
+    top: auto;
+    margin-top: 2rem;
+  }
+}
+
+/* Estimate Display */
+.estimate-display {
+  animation: fadeIn 0.3s ease;
+}
+
+#estimateEmptyState {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.estimate-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 2px solid var(--color-gray-200);
+}
+
+@media (min-width: 992px) {
+  .estimate-card {
+    padding: 2rem;
+  }
+}
+
+#estimateDisplay .estimate-card {
+  border-color: var(--color-blue-500);
+}
+
+/* Breakdown Sections */
+.breakdown-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.breakdown-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.breakdown-section h4 {
+  color: var(--color-gray-700);
+  margin-bottom: 1rem;
+}
+
+.selected-count {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: var(--color-gray-500);
+}
+
+.breakdown-items {
+  margin-bottom: 1rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  color: var(--color-gray-700);
+}
+
+.breakdown-item:first-child {
+  padding-top: 0;
+}
+
+.breakdown-item span:first-child {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.breakdown-item span:first-child:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-blue-500);
+}
+
+.discount-row,
+.subtotal-row {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-gray-300);
+}
+
+.discount-amount {
+  font-size: 1rem;
+}
+
+.subtotal-amount {
+  font-size: 1.125rem;
+}
+
+/* Total Section */
+.total-section {
+  background: var(--color-blue-100);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 1rem 1.5rem;
+  background: var(--color-gray-100);
+  border-radius: 0.5rem;
+}
+
+/* Success Message */
+.success-message {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: slideIn 0.5s ease;
+}
+
+.success-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+/* Hide Calculate Button - Using Live Updates */
+#calculateBtn {
+  display: none;
+}
+
+/* Loading State */
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spinner 0.8s ease infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Form Enhancements */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-blue-500);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--color-blue-500);
+  border-color: var(--color-blue-500);
+}
+
+.form-check-input:focus {
+  border-color: var(--color-blue-500);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25);
+}
+
+/* Accessibility */
+.selection-label:focus-within {
+  outline: 2px solid var(--color-blue-500);
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print Styles */
+@media print {
+  .estimate-section {
+    background: white;
+  }
+
+  .form-section,
+  #calculateBtn,
+  #sendRequestBtn {
+    display: none;
+  }
+
+  .estimate-display {
+    display: block !important;
+  }
+}

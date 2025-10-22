@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Your Estimate - Finalize</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/estimate-calculator.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header position-fixed start-0 top-0 w-100">
+    <div class="container">
+      <nav class="navbar navbar-expand-xl rounded-pill px-7">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <a href="/" class="logo">
+            <img src="./assets/images/logos/logo-transparent.png" class="rounded" width="50" height="50"
+              alt="Finalize Logo" />
+          </a>
+          <button class="navbar-toggler border-0 p-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasHeader" aria-controls="offcanvasHeader">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto gap-2 p-1 bg-white rounded-pill">
+              <li class="nav-item">
+                <a class="nav-link py-2 px-3 rounded-pill fw-medium" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2 px-3 rounded-pill fw-medium" href="/#howitworks">How It Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2 px-3 rounded-pill fw-medium" href="/#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2 px-3 rounded-pill fw-medium" href="/#pricing">Pricing</a>
+              </li>
+            </ul>
+            <div class="d-flex align-items-center">
+              <a href="estimate" class="btn btn-dark px-4 py-2">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper overflow-hidden">
+
+    <!-- Estimate Calculator Section -->
+    <section class="estimate-section pt-14 pt-md-15 pb-11 pb-lg-12">
+      <div class="containesr">
+
+        <!-- Page Header -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-10 col-xl-8 text-center">
+            <h1 class="display-4 fw-bold mb-3">You set the vibe, we do the rest.</h1>
+            <p class="fs-5 text-muted mb-0">Tell us what needs finishing. Get transparent pricing. Launch in 48 hours.
+            </p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+          <!-- Form Column -->
+          <div class="col-lg-7 col-xl-8">
+
+            <!-- Estimate Form -->
+            <form id="estimateForm" class="estimate-form">
+
+              <div class="form-section">
+                <!-- Section 1: Tell Us About Your App -->
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <hr style="width: 30px; border-width: 2px;">
+                  <h2 class="h4 fw-bold m-0">Tell Us About Your App</h2>
+                </div>
+
+                <!-- App URL -->
+                <div class="mb-4">
+                  <label for="appUrl" class="form-label fw-semibold">App URL <span class="text-danger">*</span></label>
+                  <input type="url" class="form-control rounded" id="appUrl" placeholder="https://example.com" required>
+                  <div class="invalid-feedback">Please enter a valid URL</div>
+                </div>
+
+                <!-- Platform -->
+                <div class="mb-4">
+                  <label for="platform" class="form-label fw-semibold">Which tool did you use?</label>
+                  <select class="form-select" id="platform">
+                    <option value="">Select a platform...</option>
+                    <option value="lovable">Lovable</option>
+                    <option value="cursor">Cursor</option>
+                    <option value="claude">Claude Code</option>
+                    <option value="bolt">Bolt.new</option>
+                    <option value="replit">Replit</option>
+                    <option value="windsurf">Windsurf</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="form-text">Helps us understand your vibe coding preferences</div>
+                </div>
+
+                <!-- Other Platform Input -->
+                <div class="d-none" id="otherPlatformContainer">
+                  <label for="otherPlatform" class="form-label fw-semibold">Please specify</label>
+                  <input type="text" class="form-control rounded mb-4" id="otherPlatform"
+                    placeholder="Enter the tool or platform name">
+                </div>
+
+                <!-- Section 2: What Needs Finishing? -->
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <hr style="width: 30px; border-width: 2px;">
+                  <h2 class="h4 fw-bold m-0">What Needs Finishing?</h2>
+                </div>
+
+                <!-- Feature Requests -->
+                <div class="mb-5">
+                  <h3 class="h6 fw-semibold mb-3">Feature Requests</h3>
+                  <div class="row g-3">
+
+                    <!-- Authentication -->
+                    <div class="col-md-4">
+                      <div class="selection-card feature-card" data-category="feature" data-price="100"
+                        data-id="authentication">
+                        <input type="checkbox" class="selection-checkbox" id="feat-auth" name="features"
+                          value="authentication">
+                        <label for="feat-auth" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:shield-check-duotone" class="fs-8 text-info"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">Authentication</span>
+                            </div>
+                            <p class="card-subtitle">OAuth, email/password, magic links</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Payments -->
+                    <div class="col-md-4">
+                      <div class="selection-card feature-card" data-category="feature" data-price="100"
+                        data-id="payments">
+                        <input type="checkbox" class="selection-checkbox" id="feat-payments" name="features"
+                          value="payments">
+                        <label for="feat-payments" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:credit-card-duotone" class="fs-8 text-success"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">Payments</span>
+                            </div>
+                            <p class="card-subtitle">Stripe, one-time or subscriptions</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- SaaS Subscriptions -->
+                    <div class="col-md-4">
+                      <div class="selection-card feature-card" data-category="feature" data-price="100" data-id="saas">
+                        <input type="checkbox" class="selection-checkbox" id="feat-saas" name="features" value="saas">
+                        <label for="feat-saas" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:arrows-clockwise-duotone"
+                                  class="fs-8 text-primary"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">SaaS Subscriptions</span>
+                            </div>
+                            <p class="card-subtitle">Billing, plan management, webhooks</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- File Uploads -->
+                    <div class="col-md-4">
+                      <div class="selection-card feature-card" data-category="feature" data-price="100"
+                        data-id="uploads">
+                        <input type="checkbox" class="selection-checkbox" id="feat-uploads" name="features"
+                          value="uploads">
+                        <label for="feat-uploads" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:upload-duotone" class="fs-8 text-warning"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">File Uploads</span>
+                            </div>
+                            <p class="card-subtitle">Images, PDFs, cloud storage</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Notifications -->
+                    <div class="col-md-4">
+                      <div class="selection-card feature-card" data-category="feature" data-price="100"
+                        data-id="notifications">
+                        <input type="checkbox" class="selection-checkbox" id="feat-notifications" name="features"
+                          value="notifications">
+                        <label for="feat-notifications" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:bell-duotone" class="fs-8 text-info"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">Notifications</span>
+                            </div>
+                            <p class="card-subtitle">Email, push, in-app alerts</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- Discount Notice -->
+                  <div class="alert alert-success mt-3 d-none" id="featureDiscount" role="alert">
+                    <strong>✨ 10% discount applied for 3+ features!</strong>
+                  </div>
+                </div>
+
+                <!-- Security & Accessibility -->
+                <div class="mb-5">
+                  <h3 class="h6 fw-semibold mb-3">Security & Accessibility</h3>
+                  <div class="row g-3">
+
+                    <!-- Security Audit -->
+                    <div class="col-md-4">
+                      <div class="selection-card security-card" data-category="security" data-price="150"
+                        data-id="security">
+                        <input type="checkbox" class="selection-checkbox" id="sec-audit" name="security"
+                          value="security">
+                        <label for="sec-audit" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:shield-check-duotone" class="fs-8 text-danger"></iconify-icon>
+                                <div class="card-price">$150</div>
+                              </div>
+                              <span class="card-title mb-0">Security Audit & Fixes</span>
+                            </div>
+                            <p class="card-subtitle">SQL injection, XSS, exposed keys</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- UI/UX Review -->
+                    <div class="col-md-4">
+                      <div class="selection-card custom-card" data-category="uiux" data-price="150" data-id="uiux">
+                        <input type="checkbox" class="selection-checkbox" id="uiux-review" name="uiux" value="uiux">
+                        <label for="uiux-review" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:sparkle-duotone" class="fs-8 text-warning"></iconify-icon>
+                                <div class="card-price">$150</div>
+                              </div>
+                              <span class="card-title mb-0">UI/UX Review</span>
+                            </div>
+                            <p class="card-subtitle">Accessibility, mobile-responsive, polish</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Deployment -->
+                <div class="mb-5">
+                  <h3 class="h6 fw-semibold mb-3">Deployment</h3>
+                  <div class="row g-3">
+
+                    <div class="col-md-4">
+                      <div class="selection-card deployment-card" data-category="deployment" data-price="100"
+                        data-id="deployment">
+                        <input type="checkbox" class="selection-checkbox" id="deploy" name="deployment"
+                          value="deployment">
+                        <label for="deploy" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:rocket-launch-duotone" class="fs-8 text-success"></iconify-icon>
+                                <div class="card-price">$100</div>
+                              </div>
+                              <span class="card-title mb-0">Deploy to Production</span>
+                            </div>
+                            <p class="card-subtitle">Hetzner, Vercel, Digital Ocean, or your choice</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Custom Request -->
+                <div class="mb-5">
+                  <h3 class="h6 fw-semibold mb-3">Custom Request</h3>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="selection-card custom-request-card" data-category="custom-request" data-price="250"
+                        data-id="custom-request">
+                        <input type="checkbox" class="selection-checkbox" id="hasCustomRequest" name="custom-request"
+                          value="custom-request">
+                        <label for="hasCustomRequest" class="selection-label">
+                          <div class="card-content">
+                            <div class="d-flex flex-column gap-3">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <iconify-icon icon="ph:lightning-duotone" class="fs-8 text-primary"></iconify-icon>
+                                <div class="card-price">Starting from $250</div>
+                              </div>
+                              <span class="card-title mb-0">Custom Request</span>
+                            </div>
+                            <p class="card-subtitle">Need something specific? Tell us what you need</p>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Custom Request Textarea (shown when card is selected) -->
+                  <div id="customRequestContainer" class="d-none mt-4">
+                    <label for="customRequest" class="form-label fw-semibold">Describe what you need</label>
+                    <textarea class="form-control" id="customRequest" rows="4" maxlength="500"
+                      placeholder="E.g., 'Integrate Twilio for SMS', 'Add multi-tenancy', 'Build a custom dashboard widget'"></textarea>
+                    <div class="form-text">Character limit: <span id="charCount">0</span>/500</div>
+                  </div>
+                </div>
+
+                <hr class="my-5">
+
+                <!-- Section 3: Contact Information -->
+                <div class="d-flex align-items-center gap-2 mb-4">
+                  <hr style="width: 30px; border-width: 2px;">
+                  <h2 class="h4 fw-bold m-0">Contact Information</h2>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-4">
+                  <label for="email" class="form-label fw-semibold">Your Email <span
+                      class="text-danger">*</span></label>
+                  <input type="email" class="form-control rounded" id="email" placeholder="founder@mystartup.com"
+                    required>
+                  <div class="invalid-feedback">Please enter a valid email address</div>
+                </div>
+
+                <!-- Additional Context -->
+                <div class="mb-4">
+                  <label for="additionalContext" class="form-label fw-semibold"> What should we know? </label>
+                  <textarea class="form-control rounded" id="additionalContext" rows="3"
+                    placeholder="Deadline, specific technologies, any blockers you've hit..."></textarea>
+                </div>
+
+                <!-- Error Message -->
+                <div class="alert alert-danger text-center d-none" id="errorMessage"></div>
+
+                 <!-- Estimate Summary -->
+                  <div class="mb-3 d-none" id="estimateSummary">
+                    <p class="form-text mb-1">
+                      Estimated Total: <span class="text-dark form-text" id="totalEstimate">$0</span>
+                    </p>
+                    <p class="small text-muted mb-0 d-none" id="customRequestNote">
+                      We'll review your custom request and send you a detailed quote within a few hours
+                    </p>
+                  </div>
+
+                <!-- Send Request Button -->
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary pe-md-14d-block d-md-flex" id="sendRequestBtn">
+                    <span class="btn-text">Send Request</span>
+                    <iconify-icon icon="solar:arrow-right-up-linear"
+                      class="btn-icon bg-white text-dark round-32 rounded-circle hstack justify-content-center fs-6"></iconify-icon>
+                  </button>
+                </div>
+              </div>
+
+            </form>
+
+            <!-- Success Message (Initially Hidden) -->
+            <div id="successMessage" class="d-none">
+              <div class="text-center">
+                <h2 class="h3 fw-bold mb-3">Request Sent!</h2>
+                <p class="mb-3">We've received your estimate request and will reply within a few hours with next steps.
+                </p>
+                <a href="/" class="btn btn-dark px-5 py-2">Back to Home</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="./assets/js/estimate-calculator.js"></script>
+  <!-- iconify icons -->
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+  <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/libs/aos-master/dist/aos.js"></script>
+  <script src="./assets/js/custom.js"></script>
+
+</body>
+
+</html>
