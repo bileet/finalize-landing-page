@@ -310,10 +310,11 @@ export default {
 			});
 		}
 
-		// Route handling
-		switch (url.pathname) {
-			case '/api/submit-request':
-				return handleSubmitRequest(request, env);
+		// Handle API routes
+		if (url.pathname === '/api/submit-request') {
+			return handleSubmitRequest(request, env);
 		}
+		
+		return env.ASSETS.fetch(request);
 	},
 };
